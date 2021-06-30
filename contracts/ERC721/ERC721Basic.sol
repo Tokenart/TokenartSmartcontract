@@ -33,7 +33,7 @@ interface ERC721Basic {
   function getApproved(uint256 _tokenId)
     external view returns (address _operator);
 
-  function setApprovalForAll(address _operator, bool _approved) external;
+  function setApprovalForAll(address _operator, bool _approved) external; 
   function isApprovedForAll(address _owner, address _operator)
     external view returns (bool);
 

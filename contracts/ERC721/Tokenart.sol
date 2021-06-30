@@ -8,7 +8,7 @@ contract Tokenart is TokenartERC721 {
         owner = msg.sender;
     }
 
-
+//Add token counter
     struct Tokenart{
         // add relevant properties
         string name;
