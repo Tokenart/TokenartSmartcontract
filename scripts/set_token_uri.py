@@ -3,7 +3,8 @@ from scripts.helpful_scripts import get_breed
 from .contract_addresses import *
 
 metadata_dic = {
-    "Movie": "https://ipfs.io/ipfs/QmRwsavdgKusorcpnc1yorTRixLhJWjefEvMzqtnMyM5wa?filename=0-tokenart0.json"
+    "tokenart0": "https://gateway.pinata.cloud/ipfs/QmWhpxpHDFDw19XpbLedJQ8TPMA2Btok7jQMSb9dfWPuti",
+    "tokenart1": "https://gateway.pinata.cloud/ipfs/QmZzgLK2n6B2C5bnQzbgWMbnzpQXmb9afd1k2LmyfYKox5"
 }
 
 
@@ -22,7 +23,7 @@ def main():
     load_accounts()
     mint = False
     print("Working on " + network.show_active())
-    token_art_address = CONTRACTS[network.show_active()]["tokenart"]
+    token_art_address = CONTRACTS[network.show_active()]["tokenart2"]
 
     tokenart = Tokenart.at(token_art_address)
     number_of_tokens = tokenart.totalSupply()
@@ -33,7 +34,7 @@ def main():
         breed = get_breed(token_id)
         if not tokenart.tokenURI(token_id).startswith("https://"):
             print("Setting token URI of{}".format(token_id))
-            set_tokenURI(token_id, tokenart, metadata_dic[breed])
+            set_tokenURI(token_id, tokenart, metadata_dic["tokenart"+str(token_id)])
         else:
             print("Skipping ")
 

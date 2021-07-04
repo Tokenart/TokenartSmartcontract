@@ -11,18 +11,19 @@ import json
 def main():
     print("Working on ")
 
-    token_art_address = CONTRACTS[network.show_active()]["tokenart"]
+    token_art_address = CONTRACTS[network.show_active()]["tokenart2"]
 
     tokenart = Tokenart.at(token_art_address)
-    write_metadata(1, tokenart)
+    write_metadata(2, tokenart)
 
 def write_metadata(number_of_tokens, nft_contract):
     upload_ipfs = True
+    dump_metadata = False
     for token_id in range(number_of_tokens):
         collectable_metadata = sample_metadata.metadata_template
         metadata_file_name = (
-            "./metadata/{}/".format(network.show_active()) + str(token_id)
-            + "-" + "tokenart{}".format(token_id) + ".json"
+            "./metadata/{}/".format(network.show_active())
+            + "tokenart{}".format(token_id) + ".json"
         )
 
         if Path(metadata_file_name).exists():
@@ -36,14 +37,15 @@ def write_metadata(number_of_tokens, nft_contract):
 
         image_to_upload = None
 
-        if (upload_ipfs == True):
-            image_path = "./img/100OKNA.mp4"
-            image_to_upload = upload_to_ipfs(image_path)
+#    if (upload_ipfs == True):
+#        image_path = "./img/100OKNA.mp4"
+#        image_to_upload = upload_to_ipfs(image_path)
+#
+#       collectable_metadata["image"] = image_to_upload
+        if (dump_metadata == True):
+            with open(metadata_file_name,"w") as file:
+                json.dump(collectable_metadata,file)
 
-            collectable_metadata["image"] = image_to_upload
-
-        with open(metadata_file_name,"w") as file:
-            json.dump(collectable_metadata,file)
         if (upload_ipfs== True):
             upload_to_ipfs(metadata_file_name)
 

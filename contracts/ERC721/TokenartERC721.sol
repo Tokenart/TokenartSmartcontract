@@ -42,6 +42,7 @@ contract TokenartERC721 is ERC721BasicToken,SupportsInterfaceWithLookup, ERC721 
     // register the supported interfaces to conform to ERC721 via ERC165
     _registerInterface(InterfaceId_ERC721Enumerable);
     _registerInterface(InterfaceId_ERC721Metadata);
+    _registerInterface(InterfaceId_ERC721);
   }
 
   /**
