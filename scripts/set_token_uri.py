@@ -4,7 +4,7 @@ from .contract_addresses import *
 
 metadata_dic = {
     "tokenart0": "https://gateway.pinata.cloud/ipfs/QmWhpxpHDFDw19XpbLedJQ8TPMA2Btok7jQMSb9dfWPuti",
-    "tokenart1": "https://gateway.pinata.cloud/ipfs/QmZzgLK2n6B2C5bnQzbgWMbnzpQXmb9afd1k2LmyfYKox5"
+    "tokenart1": "https://gateway.pinata.cloud/ipfs/QmXBwn4e7JmUnZceknK1g9x4BcSxvba2mXynjgmJa8MaZk"
 }
 
 
