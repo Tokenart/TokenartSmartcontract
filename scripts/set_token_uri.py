@@ -3,7 +3,7 @@ from scripts.helpful_scripts import get_breed
 from .contract_addresses import *
 
 metadata_dic = {
-    "tokenart0": "https://gateway.pinata.cloud/ipfs/QmWhpxpHDFDw19XpbLedJQ8TPMA2Btok7jQMSb9dfWPuti",
+    "tokenart0": "https://gateway.pinata.cloud/ipfs/QmZjoigKzDSdRNvYG8qFG8yuJC9k7jLzyMtqADTNvEo32E",
     "tokenart1": "https://gateway.pinata.cloud/ipfs/QmXBwn4e7JmUnZceknK1g9x4BcSxvba2mXynjgmJa8MaZk"
 }
 
